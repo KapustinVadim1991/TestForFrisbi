@@ -1,0 +1,13 @@
+C:\Users\kapustinvv\Desktop\TestForFrisbi\bin\Release\Database.mdf
+C:\Users\kapustinvv\Desktop\TestForFrisbi\bin\Release\Database_log.ldf
+C:\Users\kapustinvv\Desktop\TestForFrisbi\bin\Release\TestFrisbi.exe.config
+C:\Users\kapustinvv\Desktop\TestForFrisbi\bin\Release\TestFrisbi.exe
+C:\Users\kapustinvv\Desktop\TestForFrisbi\bin\Release\TestFrisbi.pdb
+C:\Users\kapustinvv\Desktop\TestForFrisbi\obj\Release\TestFrisbi.csprojAssemblyReference.cache
+C:\Users\kapustinvv\Desktop\TestForFrisbi\obj\Release\TestFrisbi.EmployeesForm.resources
+C:\Users\kapustinvv\Desktop\TestForFrisbi\obj\Release\TestFrisbi.NewEmployeeForm.resources
+C:\Users\kapustinvv\Desktop\TestForFrisbi\obj\Release\TestFrisbi.Properties.Resources.resources
+C:\Users\kapustinvv\Desktop\TestForFrisbi\obj\Release\TestFrisbi.csproj.GenerateResource.cache
+C:\Users\kapustinvv\Desktop\TestForFrisbi\obj\Release\TestFrisbi.csproj.CoreCompileInputs.cache
+C:\Users\kapustinvv\Desktop\TestForFrisbi\obj\Release\TestFrisbi.exe
+C:\Users\kapustinvv\Desktop\TestForFrisbi\obj\Release\TestFrisbi.pdb
