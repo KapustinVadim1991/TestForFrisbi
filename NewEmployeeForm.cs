@@ -29,29 +29,20 @@ namespace TestFrisbi
             ResetForm();
         }
 
-
-        private Employee CreateEmployee()
-        {
-            var salary = Math.Round(decimal.Parse(salaryTextBox.Text), 2);
-            var employmentDate = employmentDatePicker.Value.ToString("dd.MM.yyyy");            
-
-            return new Employee(lastnameTextBox.Text, nameTextBox.Text, patronymicTextBox.Text, specializationTextBox.Text, salary, employmentDate);
-        }
-
         private bool IsEmployeesDataCorrect()
         {
             // Дополнительная проверка ввода в поле "Оклад"
-            if (salaryTextBox.Text.Any(c => char.IsLetter(c) || char.IsSymbol(c) || char.IsWhiteSpace(c)))
+            if (salaryTextBox.Text.Any(c => char.IsLetter(c) || (char.IsSymbol(c) && c != '.' && c != ',') || char.IsWhiteSpace(c)))
             {
                 MessageBox.Show("Оклад не может содержать цифры, пробелы и символы", "Проверьте корректность ввода");
                 return false;
             }
 
-            if(!float.TryParse(salaryTextBox.Text, out float salar))
+            if (!decimal.TryParse(salaryTextBox.Text, out decimal salar))
             {
                 MessageBox.Show("Оклад не может содержать цифры, пробелы и символы", "Проверьте корректность ввода");
                 return false;
-            }
+            } 
 
             if(specializationTextBox.Text == String.Empty)
             {
@@ -65,15 +56,23 @@ namespace TestFrisbi
                 && CheckIfContainSymbolsOrDigits(patronymicTextBox);
         }
 
+        private Employee CreateEmployee()
+        {
+            var salary = Math.Round(decimal.Parse(salaryTextBox.Text), 2);
+            var employmentDate = employmentDatePicker.Value.ToString("dd.MM.yyyy");            
+
+            return new Employee(lastnameTextBox.Text, nameTextBox.Text, patronymicTextBox.Text, specializationTextBox.Text, salary, employmentDate);
+        }
+
         // Проверка корректного ввода в текстовое поле "Оклад"
         private void salaryTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
                 e.Handled = true;
             }
-
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            
+            if (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1)
             {
                 e.Handled = true;
             }
